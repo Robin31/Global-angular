@@ -1,0 +1,6 @@
+<li [ngClass]="{ 'aled' : true, 'aled-danger' :chienStatus==='malade', 'aled-succes' : chienStatus === 'gueri' }">
+  <h4 [ngStyle]="{color: getColor()}">Chien : {{ chienName }} -- Statut : {{ getStatus() }}</h4>
+  <a [routerLink]="[id]">Detail</a>
+  <button (click)="onSwitchOn()" [disabled]="chienStatus === 'gueri'">Guerir</button>
+  <button (click)="onSwitchOff()" [disabled]="chienStatus === 'malade'">Emposonner</button>
+</li>

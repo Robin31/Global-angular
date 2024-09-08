@@ -1,0 +1,8 @@
+<div>
+  <h4>Mes chiens</h4>
+  <p>Mis a jour {{ lastUpdate | date : 'ddMMMyy' | uppercase}}</p>
+  <app-chien-detail *ngFor="let chien of chiens; let i = index" [indexOfChien]="i" [chienName]="chien.name"
+    [chienStatus]="chien.status" [id]="chien.id"></app-chien-detail>
+  <button [disabled]="!isAuth" (click)="onGuerir()">Guérir</button>
+  <button (click)="onMalade()">Empoisonne</button>
+</div>
